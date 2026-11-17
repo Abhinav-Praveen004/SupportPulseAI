@@ -123,51 +123,71 @@ export const SLARiskForecast: React.FC = () => {
       {/* Team x Hour Congestion Heatmap */}
       <Card
         title="Team x Hour Congestion Matrix"
-        subtitle="Open at-risk ticket distribution by creation hour and team"
+        subtitle="Open at-risk ticket distribution by creation hour (00-23h UTC) and assigned team"
       >
         <div className="overflow-x-auto">
-          <div className="min-w-[700px]">
-            {/* Hour Header */}
-            <div className="grid grid-cols-25 text-2xs text-slate-400 font-mono text-center pb-2 border-b border-slate-100 dark:border-slate-800">
-              <div className="col-span-3 text-left pl-2">Team</div>
-              {Array.from({ length: 22 }, (_, h) => (
-                <div key={h} className="col-span-1">
-                  {h.toString().padStart(2, '0')}
-                </div>
-              ))}
-            </div>
-
-            {/* Team Rows */}
-            <div className="divide-y divide-slate-100 dark:divide-slate-800/60 mt-1">
+          <table className="w-full text-center border-collapse text-2xs font-mono min-w-[760px]">
+            <thead>
+              <tr className="border-b border-slate-200 dark:border-slate-800 text-slate-400">
+                <th className="text-left font-sans text-xs font-semibold py-2 pl-2 w-44">Team</th>
+                {Array.from({ length: 24 }, (_, h) => (
+                  <th key={h} className="py-2 px-0.5 font-normal text-slate-400">
+                    {h.toString().padStart(2, '0')}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800/40 text-xs">
               {forecast.team_hour_heatmap.map((row) => (
-                <div key={row.team} className="grid grid-cols-25 items-center py-2 text-xs">
-                  <div className="col-span-3 font-medium text-slate-800 dark:text-slate-200 truncate pl-2">
+                <tr key={row.team} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20">
+                  <td className="text-left font-sans font-medium text-slate-800 dark:text-slate-200 py-2.5 pl-2 truncate">
                     {row.team}
-                  </div>
-                  {Array.from({ length: 22 }, (_, h) => {
+                  </td>
+                  {Array.from({ length: 24 }, (_, h) => {
                     const count = row.hours[h.toString()] || 0;
-                    // Color intensity based on count
                     const bgClass =
                       count === 0
-                        ? 'bg-slate-100 dark:bg-slate-800/30 text-transparent'
+                        ? 'bg-slate-100/60 dark:bg-slate-800/20 text-slate-400/30'
                         : count < 3
-                        ? 'bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300'
+                        ? 'bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-semibold'
                         : count < 6
-                        ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300'
-                        : 'bg-rose-200 dark:bg-rose-950 text-rose-800 dark:text-rose-200 font-bold';
+                        ? 'bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 font-bold'
+                        : 'bg-rose-500/20 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 font-bold border border-rose-500/30';
 
                     return (
-                      <div
-                        key={h}
-                        className={`col-span-1 h-6 mx-0.5 rounded flex items-center justify-center text-2xs font-mono select-none ${bgClass}`}
-                        title={`${row.team} at ${h}:00 - ${count} at-risk tickets`}
-                      >
-                        {count > 0 ? count : ''}
-                      </div>
+                      <td key={h} className="p-0.5">
+                        <div
+                          className={`h-7 rounded flex items-center justify-center text-2xs select-none ${bgClass}`}
+                          title={`${row.team} at ${h.toString().padStart(2, '0')}:00 UTC - ${count} at-risk tickets`}
+                        >
+                          {count > 0 ? count : '-'}
+                        </div>
+                      </td>
                     );
                   })}
-                </div>
+                </tr>
               ))}
+            </tbody>
+          </table>
+
+          {/* Heatmap Legend */}
+          <div className="flex items-center justify-end gap-4 mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-2xs text-slate-400">
+            <span>Congestion Level:</span>
+            <div className="flex items-center gap-1.5">
+              <span className="w-3 h-3 rounded bg-slate-100/60 dark:bg-slate-800/20 inline-block border border-slate-300 dark:border-slate-700" />
+              <span>0 (Quiet)</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-3 h-3 rounded bg-blue-100 dark:bg-blue-950/60 inline-block" />
+              <span>1-2 (Normal)</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-3 h-3 rounded bg-amber-100 dark:bg-amber-950/60 inline-block" />
+              <span>3-5 (Warning)</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-3 h-3 rounded bg-rose-500/20 dark:bg-rose-950/80 border border-rose-500/30 inline-block" />
+              <span>6+ (High Surge)</span>
             </div>
           </div>
         </div>
