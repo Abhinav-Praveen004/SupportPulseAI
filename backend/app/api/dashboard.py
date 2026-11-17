@@ -3,9 +3,9 @@
 import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 from fastapi import APIRouter, Depends, Query
-from sqlalchemy import desc, func
+from sqlalchemy import case, desc, func
 from sqlalchemy.orm import Session
 
 from backend.app.core.config import settings
@@ -64,7 +64,7 @@ def get_dashboard_summary(
         db.query(
             func.date(Ticket.created_at).label("day"),
             func.count(Ticket.id).label("count"),
-            func.sum(func.case((Ticket.breached.is_(True), 1), else_=0)).label("breached"),
+            func.sum(case((Ticket.breached.is_(True), 1), else_=0)).label("breached"),
         )
         .group_by(func.date(Ticket.created_at))
         .order_by(desc("day"))
