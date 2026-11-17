@@ -225,15 +225,6 @@ export const api = {
   },
 
   async getReportsData(): Promise<any> {
-    // Helper to fetch evaluation reports
-    const [classification, baseline, slaRisk, leadTime, friction, latency] = await Promise.all([
-      fetch('/reports/classification_metrics.json').then((r) => r.json()).catch(() => null),
-      fetch('/reports/baseline_metrics.json').then((r) => r.json()).catch(() => null),
-      fetch('/reports/sla_risk_metrics.json').then((r) => r.json()).catch(() => null),
-      fetch('/reports/lead_time_analysis.json').then((r) => r.json()).catch(() => null),
-      fetch('/reports/friction_metrics.json').then((r) => r.json()).catch(() => null),
-      fetch('/reports/latency_benchmarks.json').then((r) => r.json()).catch(() => null),
-    ]);
-    return { classification, baseline, slaRisk, leadTime, friction, latency };
+    return request<any>('/reports');
   },
 };

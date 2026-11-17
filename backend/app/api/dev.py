@@ -2,6 +2,7 @@
 
 import io
 import json
+from pathlib import Path
 from typing import Any, Dict, Optional
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
 from sqlalchemy.orm import Session
@@ -42,6 +43,32 @@ def health_check():
         "active_model_version": registry.active_version,
         "models_in_memory": models_loaded,
         "privacy": "Zero external network calls; local CPU execution only",
+    }
+
+
+@router.get("/reports")
+def get_evaluation_reports():
+    """Retrieve all empirical benchmark evaluation reports."""
+    reports_dir = Path("reports")
+
+    def load_json(name: str):
+        p = reports_dir / name
+        if p.exists():
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception as e:
+                logger.error(f"Error reading report {name}: {e}")
+                return None
+        return None
+
+    return {
+        "classification": load_json("classification_metrics.json"),
+        "baseline": load_json("baseline_metrics.json"),
+        "slaRisk": load_json("sla_risk_metrics.json"),
+        "leadTime": load_json("lead_time_analysis.json"),
+        "friction": load_json("friction_metrics.json"),
+        "latency": load_json("latency_benchmarks.json"),
     }
 
 
