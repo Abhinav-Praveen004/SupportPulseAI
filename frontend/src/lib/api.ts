@@ -138,6 +138,8 @@ export const api = {
     channel?: string;
     category?: string;
     priority?: string;
+    contact_count?: number;
+    reopen_count?: number;
   }): Promise<Ticket> {
     return request<Ticket>('/tickets', {
       method: 'POST',

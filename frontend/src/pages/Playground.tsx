@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   AlertTriangle,
+  ArrowRight,
   Beaker,
   CheckCircle2,
   Clock,
@@ -10,6 +12,7 @@ import {
   Frown,
   Play,
   RotateCcw,
+  Send,
   ShieldCheck,
   Sparkles,
   Zap,
@@ -62,18 +65,35 @@ const PRESETS = [
 ];
 
 export const Playground: React.FC = () => {
-  const [text, setText] = useState(PRESETS[0].text);
-  const [department, setDepartment] = useState(PRESETS[0].dept);
-  const [contacts, setContacts] = useState(PRESETS[0].contacts);
-  const [reopens, setReopens] = useState(PRESETS[0].reopens);
+  const [text, setText] = useState(() => sessionStorage.getItem('playground_text') || PRESETS[0].text);
+  const [department, setDepartment] = useState(() => sessionStorage.getItem('playground_dept') || PRESETS[0].dept);
+  const [contacts, setContacts] = useState(() => Number(sessionStorage.getItem('playground_contacts')) || PRESETS[0].contacts);
+  const [reopens, setReopens] = useState(() => Number(sessionStorage.getItem('playground_reopens')) || PRESETS[0].reopens);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [results, setResults] = useState<AnalysisResponse | null>(null);
-  const [latencyMs, setLatencyMs] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [createdTicket, setCreatedTicket] = useState<{ id: string; needsTriage: boolean } | null>(null);
+
+  const [results, setResults] = useState<AnalysisResponse | null>(() => {
+    const saved = sessionStorage.getItem('playground_results');
+    return saved ? JSON.parse(saved) : null;
+  });
+  const [latencyMs, setLatencyMs] = useState<number | null>(() => {
+    const saved = sessionStorage.getItem('playground_latency');
+    return saved ? Number(saved) : null;
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem('playground_text', text);
+    sessionStorage.setItem('playground_dept', department);
+    sessionStorage.setItem('playground_contacts', contacts.toString());
+    sessionStorage.setItem('playground_reopens', reopens.toString());
+  }, [text, department, contacts, reopens]);
 
   const handleAnalyze = async () => {
     if (!text.trim()) return;
     setIsLoading(true);
+    setCreatedTicket(null);
     const t0 = performance.now();
     try {
       const res = await api.analyzeText({
@@ -83,12 +103,39 @@ export const Playground: React.FC = () => {
         reopen_count: reopens,
       });
       const t1 = performance.now();
-      setLatencyMs(Math.round(t1 - t0));
+      const latency = Math.round(t1 - t0);
+      setLatencyMs(latency);
       setResults(res);
+      sessionStorage.setItem('playground_results', JSON.stringify(res));
+      sessionStorage.setItem('playground_latency', latency.toString());
     } catch (err: any) {
       alert(`Analysis failed: ${err.message}`);
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleCreateLiveTicket = async () => {
+    if (!text.trim()) return;
+    setIsSubmitting(true);
+    setCreatedTicket(null);
+    try {
+      const created = await api.createTicket({
+        subject: text.slice(0, 80),
+        body: text,
+        department,
+        contact_count: contacts,
+        reopen_count: reopens,
+        channel: 'portal',
+      });
+      setCreatedTicket({
+        id: created.ticket_id,
+        needsTriage: created.needs_human_triage,
+      });
+    } catch (err: any) {
+      alert(`Failed to create ticket: ${err.message}`);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -98,6 +145,9 @@ export const Playground: React.FC = () => {
     setContacts(preset.contacts);
     setReopens(preset.reopens);
     setResults(null);
+    setCreatedTicket(null);
+    sessionStorage.removeItem('playground_results');
+    sessionStorage.removeItem('playground_latency');
   };
 
   return (
@@ -233,6 +283,50 @@ export const Playground: React.FC = () => {
                   </span>
                 )}
               </div>
+
+              {/* Submission Action & Live Queue Dispatch */}
+              <div className="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 text-xs">
+                <div>
+                  <span className="font-semibold text-slate-800 dark:text-slate-200 block">
+                    Dispatch to Production Queue?
+                  </span>
+                  <span className="text-2xs text-slate-400">
+                    Saves this ticket to the live database so it appears in the Triage Queue.
+                  </span>
+                </div>
+                <Button
+                  variant="primary"
+                  size="sm"
+                  onClick={handleCreateLiveTicket}
+                  isLoading={isSubmitting}
+                  icon={<Send className="w-3.5 h-3.5 mr-1" />}
+                >
+                  Submit as Live Ticket
+                </Button>
+              </div>
+
+              {/* Success Notification */}
+              {createdTicket && (
+                <div className="p-3 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800 text-xs flex items-center justify-between animate-in fade-in">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                    <span className="text-emerald-900 dark:text-emerald-100">
+                      Ticket <strong>{createdTicket.id}</strong> created in database!
+                      {createdTicket.needsTriage && (
+                        <span className="ml-2 px-1.5 py-0.5 rounded bg-amber-200 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 font-semibold text-2xs">
+                          Flagged for Human Triage
+                        </span>
+                      )}
+                    </span>
+                  </div>
+                  <Link
+                    to="/triage"
+                    className="font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1 text-xs shrink-0 ml-3"
+                  >
+                    View in Triage Queue <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              )}
 
               {/* M1: Classification & N-Gram Highlights */}
               <Card title="M1 Classification & Text Attribution">
