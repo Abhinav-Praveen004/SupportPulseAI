@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-base: 248 250 252;
+    --color-bg-surface: 255 255 255;
+    --color-border: 226 232 240;
+    --color-text-main: 15 23 42;
+    --color-text-muted: 100 116 139;
+  }
+
+  .dark {
+    --color-bg-base: 11 15 23;
+    --color-bg-surface: 17 24 39;
+    --color-border: 31 41 55;
+    --color-text-main: 241 245 249;
+    --color-text-muted: 148 163 184;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Accessible tabular numerals for metrics, statistics, and IDs */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
