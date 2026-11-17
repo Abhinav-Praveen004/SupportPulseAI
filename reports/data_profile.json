@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "dataset_name": "SupportPulse AI Synthetic IT Tickets",
+    "is_synthetic": true,
+    "generator_seed": 42,
+    "generated_at": "2026-11-17T15:17:11.527964+00:00",
+    "total_tickets": 20000,
+    "time_range": {
+      "start": "2025-11-17 12:06:06",
+      "end": "2026-11-17 11:45:52",
+      "span_days": 365
+    }
+  },
+  "splits": {
+    "train": {
+      "count": 14000,
+      "pct": 70.0,
+      "start": "2025-11-17 12:06:06",
+      "end": "2026-08-06 12:31:20"
+    },
+    "validation": {
+      "count": 3000,
+      "pct": 15.0,
+      "start": "2026-08-06 13:07:41",
+      "end": "2026-10-02 13:08:57"
+    },
+    "test": {
+      "count": 3000,
+      "pct": 15.0,
+      "start": "2026-10-02 13:12:01",
+      "end": "2026-11-17 11:45:52"
+    }
+  },
+  "distributions": {
+    "categories": {
+      "Email": 2092,
+      "Password/Access": 3392,
+      "Software Install": 2584,
+      "Application Error": 2272,
+      "Network/VPN": 3026,
+      "Service Request": 1821,
+      "Printer": 1063,
+      "Hardware": 1963,
+      "Cloud/Infrastructure": 1084,
+      "Security Incident": 703
+    },
+    "priorities": {
+      "P3": 10804,
+      "P4": 4310,
+      "P2": 3754,
+      "P1": 1132
+    },
+    "teams": {
+      "IT Helpdesk": 8422,
+      "Endpoint Services": 4592,
+      "Application Support": 2344,
+      "Network Ops": 3080,
+      "Cloud Infrastructure": 980,
+      "Security Ops": 582
+    },
+    "departments": {
+      "Marketing": 2003,
+      "Engineering": 4963,
+      "Sales": 3943,
+      "Customer Support": 1250,
+      "Human Resources": 1988,
+      "Operations": 1969,
+      "Finance": 3058,
+      "Legal": 826
+    },
+    "channels": {
+      "portal": 8836,
+      "slack": 3082,
+      "email": 7158,
+      "phone": 924
+    },
+    "statuses": {
+      "resolved": 9724,
+      "closed": 9774,
+      "in_progress": 156,
+      "waiting_on_customer": 178,
+      "open": 168
+    }
+  },
+  "key_metrics": {
+    "breach_rate_pct": 39.05,
+    "escalation_rate_pct": 7.42,
+    "vpn_burst_tickets": 550,
+    "open_tickets_count": 502
+  }
+}
