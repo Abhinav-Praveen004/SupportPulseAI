@@ -1,0 +1,11 @@
+{
+  "hardware": "Single Laptop CPU (No GPU)",
+  "sample_count": 200,
+  "mean_latency_ms": 17.28,
+  "p50_ms": 17.15,
+  "p90_ms": 19.6,
+  "p95_ms": 20.42,
+  "p99_ms": 23.11,
+  "throughput_tickets_per_sec": 57.9,
+  "target_p95_under_300ms_met": true
+}

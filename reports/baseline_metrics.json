@@ -1,0 +1,217 @@
+{
+  "model_type": "Regex/Keyword Legacy Rules",
+  "category_accuracy": 0.8767,
+  "category_macro_f1": 0.8258,
+  "category_weighted_f1": 0.8687,
+  "priority_accuracy": 0.4497,
+  "priority_macro_f1": 0.2307,
+  "labels": [
+    "Application Error",
+    "Cloud/Infrastructure",
+    "Email",
+    "Hardware",
+    "Network/VPN",
+    "Password/Access",
+    "Printer",
+    "Security Incident",
+    "Service Request",
+    "Software Install"
+  ],
+  "per_class_report": {
+    "Application Error": {
+      "precision": 0.7527272727272727,
+      "recall": 0.7610294117647058,
+      "f1-score": 0.7568555758683729,
+      "support": 272.0
+    },
+    "Cloud/Infrastructure": {
+      "precision": 0.9787234042553191,
+      "recall": 0.8846153846153846,
+      "f1-score": 0.9292929292929293,
+      "support": 156.0
+    },
+    "Email": {
+      "precision": 0.9224489795918367,
+      "recall": 0.9338842975206612,
+      "f1-score": 0.9281314168377823,
+      "support": 242.0
+    },
+    "Hardware": {
+      "precision": 0.6459948320413437,
+      "recall": 1.0,
+      "f1-score": 0.7849293563579278,
+      "support": 250.0
+    },
+    "Network/VPN": {
+      "precision": 0.9114194236926361,
+      "recall": 0.9953379953379954,
+      "f1-score": 0.9515320334261839,
+      "support": 858.0
+    },
+    "Password/Access": {
+      "precision": 0.9512820512820512,
+      "recall": 0.8939759036144578,
+      "f1-score": 0.9217391304347826,
+      "support": 415.0
+    },
+    "Printer": {
+      "precision": 1.0,
+      "recall": 0.86,
+      "f1-score": 0.9247311827956989,
+      "support": 150.0
+    },
+    "Security Incident": {
+      "precision": 1.0,
+      "recall": 0.3979591836734694,
+      "f1-score": 0.5693430656934306,
+      "support": 98.0
+    },
+    "Service Request": {
+      "precision": 0.6846153846153846,
+      "recall": 0.38362068965517243,
+      "f1-score": 0.49171270718232046,
+      "support": 232.0
+    },
+    "Software Install": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 327.0
+    },
+    "accuracy": 0.8766666666666667,
+    "macro avg": {
+      "precision": 0.8847211348205846,
+      "recall": 0.8110422866181846,
+      "f1-score": 0.8258267397889429,
+      "support": 3000.0
+    },
+    "weighted avg": {
+      "precision": 0.8842549054527702,
+      "recall": 0.8766666666666667,
+      "f1-score": 0.8687311417679431,
+      "support": 3000.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      207,
+      0,
+      0,
+      0,
+      44,
+      0,
+      0,
+      0,
+      21,
+      0
+    ],
+    [
+      13,
+      138,
+      0,
+      0,
+      0,
+      4,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      5,
+      0,
+      226,
+      0,
+      11,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      250,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      0,
+      854,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      26,
+      0,
+      0,
+      0,
+      0,
+      371,
+      0,
+      0,
+      18,
+      0
+    ],
+    [
+      17,
+      0,
+      0,
+      4,
+      0,
+      0,
+      129,
+      0,
+      0,
+      0
+    ],
+    [
+      3,
+      3,
+      19,
+      15,
+      6,
+      12,
+      0,
+      39,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      118,
+      22,
+      3,
+      0,
+      0,
+      89,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      327
+    ]
+  ]
+}

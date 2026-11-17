@@ -1,0 +1,52 @@
+{
+  "roc_auc": 0.8734,
+  "brier_score": 0.2126,
+  "alert_threshold": 0.3055,
+  "recall_at_threshold": 0.7507,
+  "precision_at_threshold": 0.9125,
+  "f1_at_threshold": 0.8237,
+  "expected_calibration_error": 0.2584,
+  "calibration_curve": [
+    {
+      "mean_predicted_probability": 0.0464,
+      "fraction_of_positives": 0.233
+    },
+    {
+      "mean_predicted_probability": 0.1517,
+      "fraction_of_positives": 0.5344
+    },
+    {
+      "mean_predicted_probability": 0.2487,
+      "fraction_of_positives": 0.6715
+    },
+    {
+      "mean_predicted_probability": 0.3477,
+      "fraction_of_positives": 0.7626
+    },
+    {
+      "mean_predicted_probability": 0.4485,
+      "fraction_of_positives": 0.8452
+    },
+    {
+      "mean_predicted_probability": 0.548,
+      "fraction_of_positives": 0.8802
+    },
+    {
+      "mean_predicted_probability": 0.6491,
+      "fraction_of_positives": 0.9025
+    },
+    {
+      "mean_predicted_probability": 0.7521,
+      "fraction_of_positives": 0.9538
+    },
+    {
+      "mean_predicted_probability": 0.8523,
+      "fraction_of_positives": 0.9756
+    },
+    {
+      "mean_predicted_probability": 0.9495,
+      "fraction_of_positives": 0.9962
+    }
+  ],
+  "test_snapshots_evaluated": 10465
+}

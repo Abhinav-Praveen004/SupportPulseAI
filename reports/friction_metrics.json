@@ -1,0 +1,57 @@
+{
+  "roc_auc_vs_escalation": 0.9257,
+  "mean_friction_score": 26.6,
+  "bands_distribution": {
+    "Calm": 2076,
+    "Uneasy": 598,
+    "Frustrated": 258,
+    "Critical": 68
+  },
+  "department_rankings": [
+    {
+      "department": "Legal",
+      "avg_friction": 28.6,
+      "ticket_count": 139
+    },
+    {
+      "department": "Marketing",
+      "avg_friction": 27.2,
+      "ticket_count": 276
+    },
+    {
+      "department": "Operations",
+      "avg_friction": 26.9,
+      "ticket_count": 301
+    },
+    {
+      "department": "Sales",
+      "avg_friction": 26.8,
+      "ticket_count": 565
+    },
+    {
+      "department": "Engineering",
+      "avg_friction": 26.6,
+      "ticket_count": 734
+    },
+    {
+      "department": "Finance",
+      "avg_friction": 26.2,
+      "ticket_count": 463
+    },
+    {
+      "department": "Customer Support",
+      "avg_friction": 26.2,
+      "ticket_count": 203
+    },
+    {
+      "department": "Human Resources",
+      "avg_friction": 25.4,
+      "ticket_count": 319
+    }
+  ],
+  "weights": {
+    "sentiment": 0.088,
+    "text_cues": 0.123,
+    "behavioral": 0.789
+  }
+}

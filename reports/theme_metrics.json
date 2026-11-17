@@ -1,0 +1,668 @@
+{
+  "optimal_k": 14,
+  "themes": [
+    {
+      "id": 3,
+      "label": "License / Desktop / Docker",
+      "top_terms": [
+        "license",
+        "desktop",
+        "docker",
+        "docker desktop",
+        "seat",
+        "postman",
+        "developer",
+        "install"
+      ],
+      "ticket_count": 2635,
+      "weekly_trend": [
+        50,
+        54,
+        49,
+        40,
+        55,
+        54,
+        46,
+        63
+      ],
+      "is_emerging": true,
+      "z_score": 2.32,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-01762",
+          "subject": "Docker Desktop license key assignment for engineering",
+          "category": "Software Install",
+          "created_at": "2025-12-19 19:51:25"
+        },
+        {
+          "ticket_id": "TCK-16383",
+          "subject": "IntelliJ IDEA Ultimate license renewal",
+          "category": "Software Install",
+          "created_at": "2026-09-20 22:06:22"
+        },
+        {
+          "ticket_id": "TCK-04710",
+          "subject": "IntelliJ IDEA Ultimate license renewal",
+          "category": "Software Install",
+          "created_at": "2026-02-13 17:51:25"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "label": "Failed / Crm Gateway / Crm",
+      "top_terms": [
+        "failed",
+        "crm gateway",
+        "crm",
+        "analyticshub",
+        "inventorymanager",
+        "pipeline",
+        "billingservice",
+        "customerportal"
+      ],
+      "ticket_count": 2667,
+      "weekly_trend": [
+        57,
+        52,
+        46,
+        50,
+        43,
+        51,
+        59,
+        53
+      ],
+      "is_emerging": false,
+      "z_score": 0.4,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-00557",
+          "subject": "API endpoint returning 502 Bad Gateway for CRM Gateway",
+          "category": "Application Error",
+          "created_at": "2025-11-28 01:55:31"
+        },
+        {
+          "ticket_id": "TCK-13284",
+          "subject": "Internal Server Error 500 when loading CRM Gateway",
+          "category": "Application Error",
+          "created_at": "2026-07-23 18:32:39"
+        },
+        {
+          "ticket_id": "TCK-04141",
+          "subject": "Critical job failure in nightly CRM Gateway batch pipeline",
+          "category": "Application Error",
+          "created_at": "2026-02-02 19:21:06"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "label": "Mailbox / Send / Emails",
+      "top_terms": [
+        "mailbox",
+        "send",
+        "emails",
+        "outlook",
+        "spam",
+        "clients",
+        "shared mailbox",
+        "calendar"
+      ],
+      "ticket_count": 2154,
+      "weekly_trend": [
+        53,
+        40,
+        43,
+        31,
+        37,
+        45,
+        33,
+        35
+      ],
+      "is_emerging": false,
+      "z_score": -0.28,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-16621",
+          "subject": "Need shared mailbox delegation for CoreSystem",
+          "category": "Email",
+          "created_at": "2026-09-25 11:51:29"
+        },
+        {
+          "ticket_id": "TCK-04289",
+          "subject": "Not receiving external emails from clients",
+          "category": "Email",
+          "created_at": "2026-02-05 18:10:29"
+        },
+        {
+          "ticket_id": "TCK-06821",
+          "subject": "Need shared mailbox delegation for CoreSystem",
+          "category": "Email",
+          "created_at": "2026-03-25 17:52:40"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "label": "Usb / Keyboard / Display",
+      "top_terms": [
+        "usb",
+        "keyboard",
+        "display",
+        "battery",
+        "trackpad",
+        "macbook",
+        "external",
+        "dock"
+      ],
+      "ticket_count": 2128,
+      "weekly_trend": [
+        43,
+        42,
+        45,
+        34,
+        40,
+        50,
+        37,
+        38
+      ],
+      "is_emerging": false,
+      "z_score": -0.37,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-14880",
+          "subject": "USB-C dock not detecting external monitors",
+          "category": "Hardware",
+          "created_at": "2026-08-23 05:24:56"
+        },
+        {
+          "ticket_id": "TCK-01580",
+          "subject": "USB-C dock not detecting external monitors",
+          "category": "Hardware",
+          "created_at": "2025-12-16 11:42:49"
+        },
+        {
+          "ticket_id": "TCK-18516",
+          "subject": "USB-C dock not detecting external monitors",
+          "category": "Hardware",
+          "created_at": "2026-10-30 18:28:02"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "label": "Monitor / Setup / Monday",
+      "top_terms": [
+        "monitor",
+        "setup",
+        "monday",
+        "laptop",
+        "headset",
+        "request",
+        "monitor home",
+        "home office"
+      ],
+      "ticket_count": 1824,
+      "weekly_trend": [
+        27,
+        33,
+        33,
+        49,
+        32,
+        37,
+        33,
+        32
+      ],
+      "is_emerging": false,
+      "z_score": -0.85,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-14596",
+          "subject": "Request for secondary 27-inch 4K monitor for home office",
+          "category": "Service Request",
+          "created_at": "2026-08-18 05:53:09"
+        },
+        {
+          "ticket_id": "TCK-09354",
+          "subject": "Request for secondary 27-inch 4K monitor for home office",
+          "category": "Service Request",
+          "created_at": "2026-05-11 21:42:18"
+        },
+        {
+          "ticket_id": "TCK-18586",
+          "subject": "Request for secondary 27-inch 4K monitor for home office",
+          "category": "Service Request",
+          "created_at": "2026-11-01 02:48:33"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "label": "Client Deliverables / Daily Client / Daily",
+      "top_terms": [
+        "client deliverables",
+        "daily client",
+        "daily",
+        "ability",
+        "team ability",
+        "impacting team",
+        "impacting",
+        "ability complete"
+      ],
+      "ticket_count": 1614,
+      "weekly_trend": [
+        25,
+        37,
+        29,
+        29,
+        43,
+        38,
+        40,
+        36
+      ],
+      "is_emerging": false,
+      "z_score": -0.29,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-14671",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-08-19 15:24:29"
+        },
+        {
+          "ticket_id": "TCK-13327",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-07-24 15:56:31"
+        },
+        {
+          "ticket_id": "TCK-04036",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-01-31 23:06:02"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "label": "Restarting / Tried Restarting / Restarting Computer",
+      "top_terms": [
+        "restarting",
+        "tried restarting",
+        "restarting computer",
+        "browser cache",
+        "computer clearing",
+        "computer",
+        "clearing",
+        "clearing browser"
+      ],
+      "ticket_count": 1498,
+      "weekly_trend": [
+        31,
+        27,
+        30,
+        22,
+        37,
+        28,
+        32,
+        32
+      ],
+      "is_emerging": false,
+      "z_score": 0.41,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-13887",
+          "subject": "Cannot connect to corporate VPN from home",
+          "category": "Network/VPN",
+          "created_at": "2026-08-04 15:42:58"
+        },
+        {
+          "ticket_id": "TCK-18017",
+          "subject": "Cannot connect to corporate VPN from home",
+          "category": "Network/VPN",
+          "created_at": "2026-10-22 03:06:36"
+        },
+        {
+          "ticket_id": "TCK-07020",
+          "subject": "Cannot connect to corporate VPN from home",
+          "category": "Network/VPN",
+          "created_at": "2026-03-29 11:05:31"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "label": "Vpn / Coresystem / Gateway",
+      "top_terms": [
+        "vpn",
+        "coresystem",
+        "gateway",
+        "room coresystem",
+        "coresystem floor",
+        "floor",
+        "corporate",
+        "corporate vpn"
+      ],
+      "ticket_count": 1260,
+      "weekly_trend": [
+        14,
+        21,
+        21,
+        19,
+        20,
+        17,
+        161,
+        151
+      ],
+      "is_emerging": false,
+      "z_score": 1.57,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-14477",
+          "subject": "Cannot connect to corporate VPN from home",
+          "category": "Network/VPN",
+          "created_at": "2026-08-15 19:46:16"
+        },
+        {
+          "ticket_id": "TCK-18431",
+          "subject": "Cannot connect to corporate VPN from home",
+          "category": "Network/VPN",
+          "created_at": "2026-10-29 05:03:34"
+        },
+        {
+          "ticket_id": "TCK-02396",
+          "subject": "Cannot connect to corporate VPN from home",
+          "category": "Network/VPN",
+          "created_at": "2025-12-31 20:26:16"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "label": "Route / Looks Like / Route Table",
+      "top_terms": [
+        "route",
+        "looks like",
+        "route table",
+        "looks",
+        "fine looks",
+        "internal database",
+        "like dns",
+        "unable reach"
+      ],
+      "ticket_count": 741,
+      "weekly_trend": [
+        8,
+        12,
+        12,
+        9,
+        9,
+        5,
+        137,
+        139
+      ],
+      "is_emerging": false,
+      "z_score": 1.77,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-05760",
+          "subject": "Cant connect to corporate VPN from home",
+          "category": "Network/VPN",
+          "created_at": "2026-03-05 17:31:48"
+        },
+        {
+          "ticket_id": "TCK-01006",
+          "subject": "Cannot connect to corporate VPN from home",
+          "category": "Network/VPN",
+          "created_at": "2025-12-06 08:22:55"
+        },
+        {
+          "ticket_id": "TCK-07833",
+          "subject": "Cannot connect to corporate VPN from home",
+          "category": "Network/VPN",
+          "created_at": "2026-04-13 18:29:35"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "Log Okta / Try / Okta Coresystem",
+      "top_terms": [
+        "log okta",
+        "try",
+        "okta coresystem",
+        "redirects",
+        "time try",
+        "coresystem redirects",
+        "prompt",
+        "log"
+      ],
+      "ticket_count": 739,
+      "weekly_trend": [
+        13,
+        13,
+        12,
+        16,
+        11,
+        14,
+        7,
+        15
+      ],
+      "is_emerging": false,
+      "z_score": 0.88,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-09127",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-05-07 08:15:12"
+        },
+        {
+          "ticket_id": "TCK-18030",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-10-22 06:52:30"
+        },
+        {
+          "ticket_id": "TCK-08655",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-04-28 12:57:28"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "label": "Attempting / Attempting Open / Coresystem Getting",
+      "top_terms": [
+        "attempting",
+        "attempting open",
+        "coresystem getting",
+        "documentation",
+        "getting permission",
+        "open",
+        "open project",
+        "project documentation"
+      ],
+      "ticket_count": 722,
+      "weekly_trend": [
+        11,
+        15,
+        18,
+        16,
+        17,
+        11,
+        16,
+        13
+      ],
+      "is_emerging": false,
+      "z_score": -0.85,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-11372",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-06-17 19:00:40"
+        },
+        {
+          "ticket_id": "TCK-12558",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-07-10 12:38:01"
+        },
+        {
+          "ticket_id": "TCK-08775",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-04-30 21:04:28"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "label": "Says Credentials / Tried Logging / Reset Temporary",
+      "top_terms": [
+        "says credentials",
+        "tried logging",
+        "reset temporary",
+        "credentials expired",
+        "logging coresystem",
+        "coresystem morning",
+        "morning says",
+        "morning"
+      ],
+      "ticket_count": 696,
+      "weekly_trend": [
+        13,
+        11,
+        17,
+        6,
+        17,
+        14,
+        12,
+        14
+      ],
+      "is_emerging": false,
+      "z_score": 0.43,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-09599",
+          "subject": "Password reset required for CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-05-16 06:36:35"
+        },
+        {
+          "ticket_id": "TCK-17277",
+          "subject": "Password reset required for CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-10-07 20:07:46"
+        },
+        {
+          "ticket_id": "TCK-11921",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-06-28 05:46:51"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Account / Locked / Account Locked",
+      "top_terms": [
+        "account",
+        "locked",
+        "account locked",
+        "client reporting",
+        "coresystem need",
+        "finish",
+        "locked unsuccessful",
+        "finish client"
+      ],
+      "ticket_count": 685,
+      "weekly_trend": [
+        10,
+        17,
+        15,
+        10,
+        15,
+        11,
+        11,
+        12
+      ],
+      "is_emerging": false,
+      "z_score": 0.13,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-02214",
+          "subject": "Locked out of my CoreSystem account",
+          "category": "Password/Access",
+          "created_at": "2025-12-28 08:52:59"
+        },
+        {
+          "ticket_id": "TCK-09436",
+          "subject": "Locked out of my CoreSystem account",
+          "category": "Password/Access",
+          "created_at": "2026-05-13 06:07:16"
+        },
+        {
+          "ticket_id": "TCK-01124",
+          "subject": "Locked out of my CoreSystem account",
+          "category": "Password/Access",
+          "created_at": "2025-12-08 06:16:51"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "App Coresystem / Authenticator App / Authenticator",
+      "top_terms": [
+        "app coresystem",
+        "authenticator app",
+        "authenticator",
+        "got",
+        "coresystem longer",
+        "generating",
+        "got new",
+        "generating valid"
+      ],
+      "ticket_count": 637,
+      "weekly_trend": [
+        13,
+        13,
+        8,
+        15,
+        16,
+        9,
+        16,
+        11
+      ],
+      "is_emerging": false,
+      "z_score": -1.03,
+      "representative_tickets": [
+        {
+          "ticket_id": "TCK-09607",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-05-16 10:18:11"
+        },
+        {
+          "ticket_id": "TCK-16580",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-09-24 17:03:30"
+        },
+        {
+          "ticket_id": "TCK-14273",
+          "subject": "Need permissions to access CoreSystem",
+          "category": "Password/Access",
+          "created_at": "2026-08-11 16:16:00"
+        }
+      ]
+    }
+  ],
+  "nmi_sanity_score": 0.6052,
+  "ari_sanity_score": 0.5382,
+  "total_themes": 14,
+  "emerging_count": 1,
+  "last_refreshed": "2026-11-17T15:22:28.268914"
+}

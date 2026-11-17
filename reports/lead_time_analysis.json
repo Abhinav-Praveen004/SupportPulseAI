@@ -1,0 +1,18 @@
+{
+  "method_comparison": {
+    "reactive_baseline": {
+      "description": "Traditional reactive alerting (alerts fire only when deadline expires)",
+      "median_advance_warning_minutes": 0.0,
+      "advance_warning_percentage": 0.0
+    },
+    "supportpulse_ai": {
+      "description": "Proactive SLA risk forecasting via multi-snapshot gradient boosting",
+      "median_advance_warning_minutes": 480.0,
+      "mean_advance_warning_minutes": 970.3,
+      "p25_advance_warning_minutes": 480.0,
+      "p75_advance_warning_minutes": 1440.0,
+      "breaches_detected_in_advance_pct": 93.52,
+      "evaluated_breached_tickets": 1590
+    }
+  }
+}
