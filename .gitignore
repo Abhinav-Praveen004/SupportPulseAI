@@ -45,7 +45,7 @@ data/*.csv
 data/*.sqlite
 data/*.db
 data/*.parquet
-models/*.joblib
+models/v1.[1-9]*
 !data/.gitkeep
 !models/.gitkeep
 

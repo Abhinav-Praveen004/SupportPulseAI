@@ -91,7 +91,7 @@ def rescore_open_tickets() -> int:
                             current_band=new_band,
                             message=alert_msg,
                             acknowledged=False,
-                            created_at=datetime.utcnow(),
+                            created_at=datetime.now(timezone.utc),
                         )
                         db.add(new_alert)
                         new_alerts_count += 1

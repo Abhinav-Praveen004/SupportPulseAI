@@ -1,7 +1,7 @@
 """Ticket Management and Real-Time ML Analysis API router."""
 
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import desc, func, or_
@@ -60,7 +60,7 @@ async def create_ticket(
 
     ticket = Ticket(
         ticket_id=ticket_id,
-        created_at=datetime.utcnow(),
+        created_at=datetime.now(timezone.utc),
         subject=payload.subject,
         body=payload.body,
         requester_id=payload.requester_id or current_user.username,
@@ -217,7 +217,7 @@ async def update_ticket(
         setattr(ticket, field, value)
 
     if "status" in update_data and update_data["status"] in ("resolved", "closed") and not ticket.resolved_at:
-        ticket.resolved_at = datetime.utcnow()
+        ticket.resolved_at = datetime.now(timezone.utc)
 
     db.commit()
     db.refresh(ticket)
@@ -253,7 +253,7 @@ async def submit_feedback(
         corrected_priority=payload.corrected_priority,
         agent_id=current_user.username,
         notes=payload.notes,
-        created_at=datetime.utcnow(),
+        created_at=datetime.now(timezone.utc),
     )
     db.add(feedback)
 
